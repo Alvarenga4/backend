@@ -10,13 +10,13 @@ const FileController = require('./controllers/FileController');
 // GET(buscar) /POST(criar algo) /PUT(Inserir) /DELETE(deletar)
 
 routes.post(
-    '/boxes', 
+    '/box', 
     BoxController.store );
 
-routes.get("/boxes/:id", BoxController.show);
+routes.get("/box/:id", BoxController.show);
 
 routes.post(
-    '/boxes/:id/files', 
+    '/box/:id/files', 
     multer(multerConfig).single('file'), 
     FileController.store );
 
